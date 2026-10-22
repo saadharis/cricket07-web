@@ -1,0 +1,118 @@
+// Real player names, applied to Data/data.gob in OPFS.
+// Ported verbatim from cricket07-mac/names.js (PAGE_JS) — it only uses
+// navigator.storage.getDirectory(), so it runs unchanged in a plain browser tab.
+(async () => {
+  const NAMES = [[50, "D.Hampton", "D.Hemp"], [66, "A.Wiete", "A.White"], [69, "N.O'Brin", "N.O'Brien"], [79, "E.Mergon", "E.Morgan"], [80, "E.Joich", "E.Joyce"], [90, "D.Lockhart", "D.Lockyear"], [92, "S.Corley", "S.Coley"], [94, "R.Watson", "R.Watkins"], [106, "G.Gidler", "G.Gilder"], [127, "I.Stanger", "I.Stead"], [128, "I.Azesham", "Imran Awan"], [129, "H.Jackson", "H.Johnson"], [130, "N.Jerome", "Nasir Javed"], [131, "M.Jackson", "M.Johnson"], [133, "R.Stark", "R.Staple"], [134, "D.Black", "D.Blake"], [136, "C.Landreth", "C.Lambert"], [137, "Nazhir Islam", "Naseer Islam"], [139, "L.Ramen", "L.Romero"], [141, "T.Roberts", "C.Reid"], [143, "Aziz Ali", "Aijaz Ali"], [144, "Rahmin Zia", "Rashid Zia"], [145, "Z.Aijam", "Z.Amin"], [146, "R.Alberts", "R.Alexander"], [147, "S.Massif", "S.Massiah"], [149, "B.Mertels", "B.Murphy"], [150, "B.Roberts", "B.Rogers"], [151, "B.Teacher", "B.Taylor"], [152, "T.Taito", "T.Taibu"], [153, "T.Paimenger", "T.Panyangara"], [154, "T.Murphy", "T.Mupariwa"], [155, "C.Mpembi", "C.Mpofu"], [156, "A.Bligton", "A.Blignaut"], [157, "T.Gipper", "T.Gripper"], [158, "S.Willens", "S.Williams"], [159, "S.Masterson", "S.Matsikenyeri"], [161, "D.Eberts", "D.Ebrahim"], [163, "D.Hound", "D.Hondo"], [165, "D.Mariner", "D.Marillier"], [166, "M.Nkembi", "M.Nkala"], [167, "E.Chumpara", "E.Chigumbura"], [168, "P.Utreth", "P.Utseya"], [172, "M.Varten", "M.Vermeulen"], [173, "H.Struck", "H.Streak"], [175, "H.Masacket", "H.Mazakadza"], [176, "K.Hobberts", "K.Hibbert"], [177, "N.MacGarety", "N.McGarrell"], [178, "B.Lawrence", "B.Lara"], [179, "N.McLangley", "N.McLean"], [180, "N.Chong", "N.Chan"], [181, "A.Sanderson", "A.Sanford"], [183, "P.Connors", "P.Collins"], [184, "I.Bradley", "I.Bradshaw"], [186, "G.Breasher", "G.Breese"], [187, "I.Jar", "I.Jan"], [188, "Z.Alibi", "Z.Ali"], [189, "A.Jugernaut", "A.Jaggernauth"], [190, "A.Karmen", "A.Kanhai"], [191, "M.Sampson", "M.Samuels"], [192, "F.Riphers", "F.Reifer"], [193, "K.Jameson", "K.Jeremy"], [194, "F.Edmonds", "F.Edwards"], [195, "P.Wellington", "P.Wallace"], [196, "W.Hendricks", "W.Hinds"], [197, "R.Emir", "R.Emrit"], [198, "R.Hain", "R.Hinds"], [199, "M.Pierson", "M.Persad"], [200, "D.Smithers", "D.Smith"], [201, "D.Paterson", "D.Powell"], [202, "D.Paigen", "D.Pagon"], [203, "C.Barries", "C.Baugh"], [204, "R.Josephs", "R.Jacobs"], [205, "R.Kellog", "R.Kelly"], [206, "D.Michelson", "D.Mohammed"], [207, "M.Negematoo", "M.Nagamootoo"], [208, "R.Koenigen", "R.King"], [209, "R.Monkton", "R.Morton"], [210, "R.Paterson", "R.Powell"], [211, "C.Bath", "C.Browne"], [212, "R.Sarweth", "R.Sarwan"], [213, "C.Colbert", "C.Collymore"], [214, "A.Rickerds", "A.Richardson"], [215, "S.Batreck", "S.Badree"], [216, "S.Bernson", "S.Benn"], [217, "L.Richards", "L.Roberts"], [218, "D.Granger", "D.Ganga"], [219, "L.Smithson", "L.Simmons"], [220, "S.Chowdapull", "S.Chanderpaul"], [221, "J.Harrinton", "J.Haynes"], [223, "M.Davids", "M.Dillon"], [224, "D.Brasco", "D.Bravo"], [225, "S.Granger", "S.Ganga"], [226, "C.Gaist", "C.Gayle"], [227, "D.Barneth", "D.Bernard"], [228, "D.Balgarath", "D.Balgobin"], [229, "S.Johnson", "S.Joseph"], [230, "T.Mahata", "T.Maraj"], [231, "M.Clerkson", "M.Clarke"], [232, "M.Blackwell", "M.Black"], [233, "J.Lawyerson", "J.Lawson"], [234, "T.Borens", "T.Best"], [235, "T.Dolston", "T.Dilshan"], [236, "C.Vest", "C.Vaas"], [237, "M.Athrapatta", "M.Atapattu"], [238, "T.Kandyba", "T.Kandamby"], [239, "S.Joyusupra", "S.Jayasuriya"], [240, "S.Jaianthi", "S.Jayantha"], [241, "D.Ferarri", "D.Fernando"], [242, "N.Zinzay", "N.Zoysa"], [243, "M.Jayawanderer", "M.Jayawardene"], [244, "T.Sarraweeda", "T.Samaraweera"], [245, "L.Malango", "L.Malinga"], [246, "M.Murgalidaron", "M.Muralitharan"], [247, "U.Chimena", "U.Chandana"], [248, "R.Heathra", "R.Herath"], [249, "R.Arnott", "R.Arnold"], [250, "K.Sangaporra", "K.Sangakkara"], [251, "K.Lucaricha", "K.Lokuarachchi"], [252, "F.Marahofra", "F.Maharoof"], [253, "P.Jarawardon", "P.Jayawardene"], [254, "A.Gonawarria", "A.Gunawardene"], [255, "S.Nedersen", "S.Nelani"], [258, "S.Paulson", "S.Pollock"], [262, "M.Butcher", "M.Boucher"], [267, "D.Martinol", "D.Makalima"], [270, "M.Brainst", "M.Bruyns"], [274, "S.Porthas", "S.Pope"], [278, "P.Strickten", "P.Strydom"], [281, "H.Gibbons", "H.Gibbs"], [283, "J.Kelly", "J.Kallis"], [288, "N.Morrison", "N.Mataboje"], [289, "B.Smith", "B.Snijman"], [290, "G.de Borthen", "G.de Bruin"], [293, "J.Kinsmen", "J.Kreusch"], [294, "B.de Witmore", "B.de Wett"], [296, "N.McKendal", "N.McKenzie"], [297, "W.Henderson", "W.Hinkel"], [299, "B.Bartlett", "B.Bennett"], [303, "S.Brauer", "S.Burger"], [304, "L.Morrison", "L.Mbane"], [306, "J.Mateo", "J.Mafa"], [312, "G.Krager", "G.Kruger"], [313, "J.Orthton", "J.Ontong"], [315, "A.Hallister", "A.Hall"], [319, "S.Chef", "S.Cook"], [321, "C.Lansfield", "C.Langeveldt"], [322, "S.Conner", "S.Conrad"], [328, "L.Grayeson", "L.Graham"], [330, "D.Thompson", "D.Terbrugge"], [332, "L.Gabriel", "L.Gamiet"], [334, "M.van Jarsmen", "V.van Jaarsveld"], [335, "D.Cummings", "D.Crookes"], [336, "M.Humphreys", "M.Harris"], [339, "M.Zedensky", "M.Zondeki"], [340, "M.Sinclair", "M.Smith"], [344, "A.Backer", "A.Bacher"], [345, "C.Summersfield", "C.Sugden"], [347, "R.Petermore", "R.Peterson"], [348, "M.Macelsfield", "M.Maketa"], [349, "E.Nicholson", "E.Nkwe"], [350, "M.Nickson", "M.Ntini"], [357, "M.Ollinton", "M.Otto"], [359, "Kemran Akmel", "Kamran Akmal"], [360, "Farhen Adel", "Farhan Adil"], [361, "Fashel Athbar", "Faisal Athar"], [362, "Fez-e-Aber", "Fazl-e-Akbar"], [363, "Fisal Iqubel", "Faisal Iqbal"], [364, "Shadid Akhti", "Shoaib Akhtar"], [365, "Sarja Muchte", "Saqlain Mushtaq"], [366, "Kublai Kalm", "Kabir Khan"], [367, "Shahid Melik", "Shoaib Malik"], [368, "Salmen Buetts", "Salman Butt"], [369, "Salam Elah", "Saleem Elahi"], [370, "Danis Kenaria", "Danish Kaneria"], [371, "Jonah Zia", "Junaid Zia"], [372, "Shara Aphred", "Shahid Afridi"], [373, "Taufeiq Umer", "Taufeeq Umar"], [374, "Shetab Kahir", "Shadab Kabir"], [375, "Umhar Gel", "Umar Gul"], [376, "Abdel Razzeq", "Abdul Razzaq"], [377, "Saied Bin Nesir", "Saeed Bin Nasir"], [378, "Imran Ferquat", "Imran Farhat"], [379, "Mahmood Sani", "Mohammad Sami"], [380, "Mohamid Akrim", "Mohammad Akram"], [382, "Mohammed Yosef", "Mohammad Yousuf"], [383, "Mohammod Hafiz", "Mohammad Hafeez"], [384, "Morin Kalm", "Moin Khan"], [386, "Asin Kermel", "Asim Kamal"], [387, "Atick-uz-Zeman", "Atiq-uz-Zaman"], [389, "Azher Mohammad", "Azhar Mahmood"], [391, "Raished Laitif", "Rashid Latif"], [392, "Neved Latiph", "Naved Latif"], [393, "Nevid-ul-Heq", "Naved-ul-Hasan"], [394, "Hassan Adnan", "Hasan Adnan"], [395, "Yaser Arefit", "Yasir Arafat"], [396, "Yesir Hemad", "Yasir Hameed"], [397, "Hosen Rizer", "Hasan Raza"], [398, "Irfaneden", "Irfanuddin"], [399, "Yonas Khan", "Younis Khan"], [400, "Inzemen-ul-Haiq", "Inzamam-ul-Haq"], [401, "Imren Nazher", "Imran Nazir"], [402, "Shabir Ackmed", "Shabbir Ahmed"], [405, "P.Frank", "P.Fulton"], [406, "G.Wagner", "G.West"], [407, "D.Kendricks", "D.Kelly"], [408, "S.Sturgis", "S.Styris"], [409, "M.Bradford", "M.Bailey"], [410, "A.Richards", "A.Redmond"], [411, "N.Horton", "N.Horsley"], [412, "G.Steading", "G.Stead"], [413, "S.Barry", "S.Bond"], [414, "I.Butters", "I.Butler"], [415, "C.Colston", "C.Cairns"], [416, "J.Marsten", "J.Marshall"], [417, "G.Renton", "G.Robinson"], [421, "W.Corinthian", "W.Cornelius"], [422, "P.Winters", "P.Wiseman"], [423, "N.Briens", "N.Broom"], [424, "S.Sutton", "S.Stewart"], [425, "B.Darrens", "B.Donkers"], [427, "M.Harris", "M.Hart"], [429, "W.Winston", "W.Wisneski"], [431, "B.Marshall", "B.Martin"], [433, "N.Arnold", "N.Astle"], [434, "C.Harrington", "C.Harris"], [435, "D.Tufton", "D.Tuffey"], [437, "D.Vincenzo", "D.Vettori"], [438, "G.Irvens", "G.Irwin"], [442, "B.McElston", "B.McCullum"], [444, "C.McMartin", "C.McMillan"], [445, "H.Simmons", "H.Shaw"], [446, "J.Hartwall", "J.Hatwell"], [447, "C.Morlins", "C.Martin"], [448, "J.Yorick", "J.Yovich"], [452, "M.Pauls", "M.Papps"], [453, "G.Albertson", "G.Aldridge"], [454, "S.Cummings", "S.Cunis"], [458, "M.Orpheum", "M.Orchard"], [459, "H.Marsten", "H.Marshall"], [461, "S.Farrow", "S.Fleming"], [462, "A.Ellington", "A.Ellis"], [463, "B.Zuidreth", "B.Zuiderent"], [464, "N.Stratten", "N.Statham"], [465, "H.Molton", "H.Mol"], [466, "R.Baillie", "R.Bradley"], [467, "Aziz Kalm", "Asim Khan"], [468, "Z.Achmir", "Zulfiqar Ahmed"], [469, "T.de Leighs", "T.de Leede"], [470, "L.van Triest", "L.van Troost"], [471, "K.van Nordwick", "K.van Noortwijk"], [472, "R.van Osteraich", "R.van Oosterom"], [474, "J.Eisner", "J.Esmeijer"], [475, "E.Schwartz", "E.Schiferli"], [476, "S.Goth", "S.Gokke"], [477, "J.Keisterberg", "J.Kloppenburg"], [478, "V.Grandview", "V.Grandia"], [479, "R.Schwaben", "R.Scholte"], [480, "D.van Berg", "D.van Bunge"], [481, "R.Neiderman", "R.Nijman"], [482, "J.Smiths", "J.Smits"], [483, "A.Rejher", "Adeel Raja"], [484, "B.Katze", "B.Kotze"], [485, "A.Barker", "A.Burger"], [486, "L.Barker", "L.Burger"], [487, "M.Kraig", "M.Karg"], [488, "J.van der Mair", "J.van der Merwe"], [489, "D.Kurtz", "D.Kotze"], [490, "B.Murten", "B.Murgatroyd"], [491, "B.van Road", "B.van Rooi"], [492, "M.van Scherl", "M.van Schoor"], [493, "J.Glenn-Spitsen", "J.Glen-Spyron"], [494, "R.Schwartz", "R.Scholtz"], [495, "D.Kelder", "D.Keulder"], [496, "S.Barker", "S.Burger"], [497, "R.van Vulfen", "R.van Vuuren"], [498, "G.Snowmen", "G.Snyman"], [499, "L.Lowis", "L.Louw"], [500, "R.Waters", "R.Walters"], [501, "H.Ludwig", "H.Ludik"], [502, "S.Swanpool", "S.Swanepoel"], [503, "G.Cloister", "G.Cloete"], [504, "H.Moody", "H.Modi"], [505, "D.Ontoya", "D.Obuya"], [506, "L.Osmand", "L.Onyango"], [507, "A.Bhurma", "A.Bhudia"], [508, "M.Odenth", "M.Odumbe"], [509, "J.Alberts", "J.Ababu"], [510, "M.Paterson", "M.Patel"], [511, "A.Lucien", "A.Luseno"], [512, "P.Orten", "P.Ongondo"], [513, "R.Aquart", "R.Aga"], [514, "K.Otto", "K.Otieno"], [515, "M.Saki", "M.Suji"], [516, "T.Odenko", "T.Odoyo"], [517, "T.Saki", "A.Suji"], [518, "R.Sharmen", "R.Shah"], [519, "B.Paters", "B.Patel"], [520, "M.Ombert", "M.Ouma"], [521, "C.Ontoya", "C.Obuya"], [522, "A.Jameson", "A.Janmohamed"], [523, "S.Tirol", "S.Tikolo"], [524, "J.Krumble", "A.Kumble"], [525, "R.Dravia", "R.Dravid"], [526, "S.Gungly", "S.Ganguly"], [527, "S.Tendehar", "S.Tendulkar"], [528, "H.Bertani", "H.Badani"], [529, "A.Bender", "A.Bhandari"], [530, "V.Seway", "V.Sehwag"], [531, "V.Lexingten", "V.Laxman"], [532, "B.Partelm", "R.Patel"], [533, "R.Gafalkar", "R.Gavaskar"], [534, "G.Gemphir", "G.Gambhir"], [535, "A.Reiudum", "A.Rayudu"], [536, "A.Agercker", "A.Agarkar"], [537, "T.Yohen", "T.Yohannan"], [538, "Serindeap Singh", "Sarandeep Singh"], [540, "S.Des", "S.Das"], [541, "L.Balije", "L.Balaji"], [542, "A.Mistar", "A.Mishra"], [543, "M.Kerthick", "M.Kartik"], [544, "M.Keph", "M.Kaif"], [545, "D.Dhenier", "M.Dhoni"], [546, "D.Dusgapte", "D.Dasgupta"], [547, "R.Soithi", "R.Sodhi"], [548, "A.Charpa", "A.Chopra"], [549, "A.Naharem", "A.Nehra"], [550, "A.Salvator", "A.Salvi"], [551, "Hurvaj Singh", "Harbhajan Singh"], [552, "P.Partell", "P.Patel"], [553, "S.Bengel", "S.Bangar"], [554, "Yevray Singh", "Yuvraj Singh"], [555, "S.Behetel", "S.Bahutule"], [556, "D.Monika", "D.Mongia"], [558, "Z.Kalm", "Z.Khan"], [559, "I.Sidi", "I.Siddiqui"], [560, "A.Retare", "A.Ratra"], [562, "I.Parthen", "I.Pathan"], [563, "J.Yiddey", "J.Yadav"], [564, "W.Jephar", "W.Jaffer"], [599, "S.Harrison", "S.Harmison"], [633, "A.Flinsten", "A.Flintoff"], [771, "T.Palladino", "A.Palladino"], [828, "M.Varhen", "M.Vaughan"], [879, "N.Ipsen", "N.Ifill"], [880, "J.Davids", "J.Davison"], [881, "I.Bilworth", "I.Billcliff"], [882, "Z.Sertarti", "Z.Surkari"], [883, "A.Costingten", "A.Codrington"], [884, "B.Seabren", "B.Seebaran"], [885, "J.Harrington", "J.Harris"], [887, "H.Dillen", "H.Dhillon"], [888, "A.Begal", "A.Bagai"], [889, "S.Dhemiran", "S.Dhaniram"], [890, "F.Saur", "A.Sattaur"], [891, "D.Chutney", "D.Chumney"], [892, "A.Semid", "A.Samad"], [893, "Z.Hasein", "Z.Hussain"], [894, "N.de Grouse", "N.de Groot"], [895, "I.Mahatra", "I.Maraj"], [896, "K.Sandersen", "K.Sandher"], [897, "A.Paterson", "A.Patel"], [898, "E.Sinathen", "E.Sinnathamby"], [899, "Alik Kapeli", "Alok Kapali"], [900, "Khalid Mased", "Khaled Mashud"], [901, "Enamil Hake", "Enamul Haque"], [902, "M.Asrafel", "M.Ashraful"], [903, "Raizin Saleb", "Rajin Saleh"], [904, "M.Rafike", "M.Rafique"], [905, "Tarek Aziq", "Tareq Aziz"], [906, "Fasal Hoisine", "Faisal Hossain"], [907, "Jased Omir", "Javed Omar"], [908, "Sahirer Hosein", "Shariar Hossain"], [909, "Tepash Baisha", "Tapash Baisya"], [910, "Mandjura Islam", "Manjural Islam"], [911, "Mashef Mortaz", "Masrafe Mortaza"], [912, "Abdul Razzik", "Abdur Razzak"], [913, "Habib Beshir", "Habibul Bashar"], [914, "Harman Sakir", "Hannan Sarkar"], [915, "Al Sahara", "Al Sahariar"], [916, "Alenger Kaber", "Alamgir Kabir"], [917, "Mustafa Rahmin", "Mushfiqr Rahman"], [918, "Khalid Mamed", "Khaled Mahmud"], [933, "P.South", "M.North"], [988, "R.Punten", "R.Ponting"], [997, "A.Simons", "A.Symonds"], [1000, "M.Handel", "M.Hayden"], [1014, "M.Clerkson", "M.Clarke"], [1020, "D.Morten", "D.Martyn"], [1053, "J.Nichols", "S.Noles"], [1059, "S.Warren", "S.Warne"], [1066, "J.Langford", "J.Langer"], [1075, "J.Gilberts", "J.Gillespie"], [1086, "A.Gelkist", "A.Gilchrist"], [1094, "G.McGan", "G.McGrath"]];
+  const apply = async (NAMES, mode) => {
+  const ENTRY = '113964e05e69ab31d264fb8f15c58e5c.cdf', REC = 360, MARK = '.names-original.json';
+  const root = await navigator.storage.getDirectory();
+  let dir, fh;
+  try { dir = await root.getDirectoryHandle('c07game'); fh = await (await dir.getDirectoryHandle('Data')).getFileHandle('data.gob'); }
+  catch { return 'no-game'; }
+  const file = await fh.getFile();
+  const bytes = async (a, b) => new Uint8Array(await file.slice(a, b).arrayBuffer());
+  const head = new DataView((await bytes(0, 16)).buffer);
+  if (head.getUint32(0) !== 0x42494746) return 'unknown';   // "BIGF"
+  const count = head.getUint32(8), idx = await bytes(16, 16 + head.getUint32(12));
+  const iv = new DataView(idx.buffer);
+  let pos = -1, off = 0, size = 0;
+  for (let p = 0, k = 0; k < count; k++) {
+    const o = iv.getUint32(p), s = iv.getUint32(p + 4); let e = p + 8;
+    while (idx[e]) e++;
+    if (new TextDecoder('latin1').decode(idx.subarray(p + 8, e)) === ENTRY) { pos = 16 + p; off = o; size = s; break; }
+    p = e + 1;
+  }
+  if (pos < 0) return 'unknown';
+
+  // RefPack (EA's compression)
+  const unpack = (s) => {
+    const f = s[0]; let p = 2, n;
+    if (f & 0x80) { n = (s[p] << 24 | s[p + 1] << 16 | s[p + 2] << 8 | s[p + 3]) >>> 0; p += 4; } else { n = s[p] << 16 | s[p + 1] << 8 | s[p + 2]; p += 3; }
+    if (f & 1) p += f & 0x80 ? 4 : 3;
+    const o = new Uint8Array(n); let q = 0;
+    const lit = (k) => { o.set(s.subarray(p, p + k), q); p += k; q += k; };
+    while (p < s.length) {
+      const c = s[p]; let len, dist;
+      if (c < 0x80) { const c1 = s[p + 1]; p += 2; lit(c & 3); len = ((c & 0x1c) >> 2) + 3; dist = ((c & 0x60) << 3) + c1 + 1; }
+      else if (c < 0xc0) { const c1 = s[p + 1], c2 = s[p + 2]; p += 3; lit(c1 >> 6); len = (c & 0x3f) + 4; dist = ((c1 & 0x3f) << 8) + c2 + 1; }
+      else if (c < 0xe0) { const c1 = s[p + 1], c2 = s[p + 2], c3 = s[p + 3]; p += 4; lit(c & 3); len = ((c & 0x0c) << 6) + c3 + 5; dist = ((c & 0x10) << 12) + (c1 << 8) + c2 + 1; }
+      else if (c < 0xfc) { p += 1; lit(((c & 0x1f) << 2) + 4); continue; }
+      else { p += 1; lit(c & 3); break; }
+      for (let i = 0; i < len; i++, q++) o[q] = o[q - dist];
+    }
+    return o;
+  };
+  // a valid RefPack stream made of literal blocks only (bigger, but simple)
+  const pack = (d) => {
+    const n = d.length, o = new Uint8Array(5 + n + Math.ceil(n / 112) + 1); let q = 0, p = 0;
+    o.set([0x10, 0xfb, n >> 16 & 255, n >> 8 & 255, n & 255]); q = 5;
+    while (n - p >= 4) { const k = Math.min(112, ((n - p) >> 2) << 2); o[q++] = 0xe0 + ((k - 4) >> 2); o.set(d.subarray(p, p + k), q); q += k; p += k; }
+    o[q++] = 0xfc + (n - p); o.set(d.subarray(p), q); q += n - p;
+    return o.subarray(0, q);
+  };
+
+  const raw = await bytes(off, off + size);
+  const cdf = raw[1] === 0xfb ? unpack(raw) : raw;
+  const dec = new TextDecoder('latin1');
+  const nameAt = (i) => { const b = cdf.subarray(i * REC + 8, i * REC + 24); const z = b.indexOf(0); return dec.decode(z < 0 ? b : b.subarray(0, z)); };
+  const isReal = NAMES.every(([i, , r]) => nameAt(i) === r);
+  const isFake = NAMES.every(([i, f]) => nameAt(i) === f);
+  const state = isReal ? 'real' : isFake ? 'original' : 'unknown';
+  if (mode === 'status' || state === mode || state === 'unknown') return state;
+
+  const setEntry = async (w, o, s) => {
+    const b = new DataView(new ArrayBuffer(8)); b.setUint32(0, o); b.setUint32(4, s);
+    await w.write({ type: 'write', position: pos, data: b.buffer });
+  };
+  if (mode === 'original') {
+    let m; try { m = JSON.parse(await (await (await dir.getFileHandle(MARK)).getFile()).text()); } catch { return 'no-original'; }
+    const w = await fh.createWritable({ keepExistingData: true });
+    await setEntry(w, m.off, m.size);
+    // also drop the appended list and restore the archive's length, so the file is byte for byte the
+    // original again (the port's launcher checks file sizes when its game-file list changes)
+    if (m.fileSize && m.fileSize < file.size && m.off + m.size <= m.fileSize) {
+      const t = new DataView(new ArrayBuffer(4)); t.setUint32(0, m.fileSize, true);
+      await w.write({ type: 'write', position: 4, data: t.buffer });
+      await w.truncate(m.fileSize);
+    }
+    await w.close();
+    return 'original';
+  }
+  // mode === 'real'
+  const out = new Uint8Array(cdf);
+  for (const [i, , r] of NAMES) {
+    const b = new Uint8Array(16);
+    for (let k = 0; k < r.length; k++) b[k] = r.charCodeAt(k);
+    out.set(b, i * REC + 8);
+  }
+  const packed = pack(out);
+  // The marker remembers the original list and the archive's original length. The new list always goes right
+  // after that length, replacing any list written before, so switching names on and off doesn't grow the file.
+  let m = null;
+  try { m = JSON.parse(await (await (await dir.getFileHandle(MARK)).getFile()).text()); } catch {}
+  if (!m || !m.fileSize) {
+    // first time (or a marker from an older version of the app): the names are original now, so the current
+    // entry is the original list, and new lists go after everything already in the file
+    m = { off, size, fileSize: file.size };
+    const mw = await (await dir.getFileHandle(MARK, { create: true })).createWritable();
+    await mw.write(JSON.stringify(m)); await mw.close();
+  }
+  const end = m.fileSize, at = end + ((16 - end % 16) % 16), total = at + packed.length;
+  const w = await fh.createWritable({ keepExistingData: true });
+  await w.truncate(at);
+  await w.write({ type: 'write', position: at, data: packed });
+  await setEntry(w, at, packed.length);
+  const t = new DataView(new ArrayBuffer(4)); t.setUint32(0, total, true);
+  await w.write({ type: 'write', position: 4, data: t.buffer });
+  await w.close();
+  return 'real';
+};
+  // The game files must be in place first; the page reports 'no-game' until they are.
+  let tries = 0;
+  const run = async () => {
+    const r = await apply(NAMES, 'real');
+    if (r === 'no-game' && tries++ < 60) { setTimeout(run, 3000); return; }
+    if (r === 'real') console.log('Cricket 07 web: real names applied (' + NAMES.length + ' players).');
+  };
+  run();
+})();
